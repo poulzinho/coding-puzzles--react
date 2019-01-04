@@ -5,7 +5,8 @@ export default class JumpingOnClouds extends Component {
 
     puzzleName = 'Jumping on the Clouds';
     puzzleDescription = 'Jump over the 1s and avoid consecutive 0s (if possible).';
-    puzzleInput = '0 0 1 0 0 0 1 0 1';
+    puzzleInput = 'clouds = [<strong>0</strong>, <strong>0</strong>, 1, <strong>0</strong>, 0, ' +
+        '<strong>0</strong>, 1, <strong>0</strong>, 1]';
     puzzleExpected = '5';
 
     /*eslint-disable */
