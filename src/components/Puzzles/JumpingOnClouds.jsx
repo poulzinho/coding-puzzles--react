@@ -14,7 +14,7 @@ export default class JumpingOnClouds extends Component {
         '\n' +
         '    let steps = 0;\n' +
         '    for (let i = 0; i < clouds.length - 1; i++) {\n' +
-        '        if (clouds[i + 2] == 0) i++;\n' +
+        '        if (clouds[i + 2] === 0) i++;\n' +
         '        steps++;\n' +
         '    }\n' +
         '\n' +
@@ -26,7 +26,7 @@ export default class JumpingOnClouds extends Component {
 
         let steps = 0;
         for (let i = 0; i < clouds.length - 1; i++) {
-            if (clouds[i + 2] == 0) i++;
+            if (clouds[i + 2] === 0) i++;
             steps++;
         }
 
