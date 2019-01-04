@@ -4,21 +4,24 @@ import PuzzleCard from '../PuzzleCard/PuzzleCard';
 export default class FloydTriangle extends Component {
 
     puzzleName = 'Floyd Triangle';
-    puzzleDescription = 'A Floyd Triangle should look like:';
+    puzzleInput = 'levels = 3';
+    puzzleDescription = 'A Floyd Triangle should look like a pyramid that continues a series:';
     puzzleExpected = '1<br/>2 3 <br/>4 5 6';
 
+    /*eslint-disable */
     puzzleLint =
-        'const levels = 3;\n' +
-        'let counter = 1;\n' +
+        '(levels = 3) => {\n' +
+        '    let counter = 1;\n' +
         '\n' +
-        'const row = x =>\n' +
-        '    Array.from(Array(x)).reduce(\n' +
-        '        (acum, current, idx) => acum += `${counter++}`, \'\') + \'\\n\';\n' +
+        '    const row = x =>\n' +
+        '        Array.from(Array(x)).reduce(\n' +
+        '            (acum, current, idx) => acum += `${counter++}`, \'\') + \'\\n\';\n' +
         '\n' +
-        'return Array.from(Array(levels), (_, x) => `${row(x + 1)}`);\n';
+        '    return Array.from(Array(levels), (_, x) => `${row(x + 1)}`);\n' +
+        '}';
+    /*eslint-enable */
 
-    puzzleCode = () => {
-        const levels = 3;
+    puzzleCode = (levels = 3) => {
         let counter = 1;
 
         const row = x =>
@@ -33,6 +36,7 @@ export default class FloydTriangle extends Component {
             <div>
                 <PuzzleCard puzzleName={this.puzzleName}
                             puzzleDescription={this.puzzleDescription}
+                            puzzleInput={this.puzzleInput}
                             puzzleExpected={this.puzzleExpected}
                             puzzleLint={this.puzzleLint}
                             puzzleCode={this.puzzleCode}

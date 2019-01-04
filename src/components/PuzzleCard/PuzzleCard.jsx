@@ -13,6 +13,14 @@ export default class PuzzleCard extends React.Component {
                     </Card.Description>
                 </Card.Content>
                 <Card.Content>
+                    <Card.Header><h5>Input:</h5></Card.Header>
+                    <Card.Description>
+                        <div dangerouslySetInnerHTML={
+                            this.getHTML(this.props.puzzleInput)
+                        }/>
+                    </Card.Description>
+                </Card.Content>
+                <Card.Content>
                     <Card.Header><h5>Expected Output:</h5></Card.Header>
                     <Card.Description>
                         <div dangerouslySetInnerHTML={
@@ -21,7 +29,7 @@ export default class PuzzleCard extends React.Component {
                     </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
-                    <Card.Header><h5>Code</h5></Card.Header>
+                    <Card.Header><h5>Code:</h5></Card.Header>
                     <Highlighter>
                         {this.props.puzzleLint}
                     </Highlighter>
