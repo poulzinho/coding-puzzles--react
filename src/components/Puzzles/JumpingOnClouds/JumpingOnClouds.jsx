@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PuzzleCard from '../PuzzleCard/PuzzleCard';
+import PuzzleCard from '../../PuzzleCard/PuzzleCard';
 
 export default class JumpingOnClouds extends Component {
 

@@ -1,3 +1,3 @@
-export { default as FloydTriangle } from './FloydTriangle';
-export { default as NumbersTriangle } from './NumbersTriangle';
-export { default as JumpingOnClouds } from './JumpingOnClouds';
+export { default as FloydTriangle } from './FloydTriangle/FloydTriangle';
+export { default as NumbersTriangle } from './NumbersTriangle/NumbersTriangle';
+export { default as JumpingOnClouds } from './JumpingOnClouds/JumpingOnClouds';
