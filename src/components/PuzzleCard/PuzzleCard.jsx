@@ -9,7 +9,9 @@ export default class PuzzleCard extends React.Component {
                 <Card.Content>
                     <Card.Header>{this.props.puzzleName}</Card.Header>
                     <Card.Description>
-                        {this.props.puzzleDescription}
+                        <div dangerouslySetInnerHTML={
+                            this.getHTML(this.props.puzzleDescription)
+                        }/>
                     </Card.Description>
                 </Card.Content>
                 <Card.Content>
