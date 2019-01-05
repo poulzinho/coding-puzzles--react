@@ -3,7 +3,7 @@ import PuzzleCard from '../../PuzzleCard/PuzzleCard';
 
 export default class HourGlass extends Component {
 
-    puzzleName = 'HourGlass';
+    puzzleName = 'Hour Glass';
     puzzleInput = `arr = [<br/>
         [1, 2, 1, 0, 0, 0],<br/>
         [0, 2, 0, 0, 0, 0],<br/>

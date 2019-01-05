@@ -1,11 +1,18 @@
 import React from 'react'
-import { Card } from 'semantic-ui-react'
+import { Button, Card } from 'semantic-ui-react'
 import { Highlighter } from '../Highlighter/Highlighter';
+import './PuzzleCard.css';
 
 export default class PuzzleCard extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { renderCode: false };
+    }
+
     render() {
         return (
-            <Card fluid>
+            <Card className='puzzle-card' fluid>
                 <Card.Content>
                     <Card.Header>{this.props.puzzleName}</Card.Header>
                     <Card.Description>
@@ -37,10 +44,22 @@ export default class PuzzleCard extends React.Component {
                     </Highlighter>
                 </Card.Content>
                 <Card.Content>
+                    <Card.Header>
+                        <Button primary
+                                onClick={() => this.renderCodeOutput()}>
+                            Run Code
+                        </Button>
+                    </Card.Header>
+                </Card.Content>
+                <Card.Content>
                     <Card.Header><h5>Actual Output:</h5></Card.Header>
-                    <Highlighter>
-                        {this.codeOutput(this.props.puzzleCode)}
-                    </Highlighter>
+                    {this.state.renderCode ?
+                        <Highlighter>{
+                            this.codeOutput(this.props.puzzleCode)
+                        }</Highlighter>
+                        :
+                        <p>Press Run Code to see the result</p>
+                    }
                 </Card.Content>
             </Card>
         )
@@ -48,6 +67,12 @@ export default class PuzzleCard extends React.Component {
 
     getHTML(str) {
         return { __html: str }
+    }
+
+    renderCodeOutput() {
+        this.setState({
+            renderCode: true
+        });
     }
 
     codeOutput(code) {
